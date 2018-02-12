@@ -12,7 +12,6 @@ public class ClientTest extends TestCase {
         Client clientTest = new Client(coapRemoteServerUrl);
         clientTest.doGet();
         assertTrue(clientTest.isGetSuccessful());
-
     }
 
     public void testLocalHelloWorldGet() {
