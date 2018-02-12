@@ -19,18 +19,23 @@ public class ClientMain {
 
         Client coapClient = new Client(coapServerUrl);
         String payload;
+        int code;
         switch(coapMethod) {
             case "GET" :
-                payload = coapClient.doGet();
+                coapClient.doGet();
+                code = coapClient.getGetCode();
+                payload = coapClient.getGetResponseText();
                 System.out.println("Resource '" + coapServerUrl + "'");
                 System.out.println("Method '" + coapMethod + "'");
+                System.out.println("CoAP server code response is : " + code);
                 System.out.println("CoAP server response is : " + payload);
                 break;
             case "POST":
                 System.out.println("Enter payload to send: ");
                 Scanner scanner = new Scanner(System.in);
                 payload = scanner.nextLine();
-                coapClient.doPost(payload);
+                String response = coapClient.doPost(payload);
+                System.out.println("Response from CoAP server : " + response);
                 break;
             default:
                 System.err.println("ERROR: Unknwon method (" + coapMethod + ")");

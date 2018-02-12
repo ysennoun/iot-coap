@@ -8,6 +8,7 @@ public class Client {
 
     private static String coapUrl;
     private static CoapClient client;
+    private static CoapResponse coapResponse;
 
     public Client(String coapUrl){
         this.coapUrl = coapUrl;
@@ -19,7 +20,19 @@ public class Client {
         return coapResponse.getResponseText();
     }
 
-    public String doGet() {
-        return client.get().getResponseText();
+    public String getGetResponseText() {
+        return this.coapResponse.getResponseText();
+    }
+
+    public void doGet() {
+        this.coapResponse = this.client.get();
+    }
+
+    public int getGetCode() {
+        return this.coapResponse.getCode().value;
+    }
+
+    public boolean isGetSuccessful() {
+        return this.coapResponse.isSuccess();
     }
 }
