@@ -53,6 +53,10 @@
       <name>Californium Repository</name>
       <url>https://repo.eclipse.org/content/repositories/californium/</url>
     </repository>
+    <repository>
+      <id>jitpack.io</id> <!-- Enable to transform a maven release into a repository -->
+      <url>https://jitpack.io</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -80,6 +84,13 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson.version}</version>
       <scope>compile</scope>
+    </dependency>
+
+    <!-- PERSISTERS DEPENDENCY -->
+    <dependency>
+      <groupId>com.github.ysennoun</groupId>
+      <artifactId>iot-persisters</artifactId>
+      <version>1.1.0</version>
     </dependency>
   </dependencies>
 </project>

@@ -15,7 +15,6 @@ public class Server extends CoapServer {
     private static final int COAP_PORT = NetworkConfig.getStandard().getInt(NetworkConfig.Keys.COAP_PORT);
 
     public Server() throws SocketException {
-
         addEndpoints();
     }
 
