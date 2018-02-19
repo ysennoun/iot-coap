@@ -2,7 +2,6 @@ package com.xebia.iot.coap.server.resources;
 
 import com.xebia.iot.persister.Persister;
 import org.eclipse.californium.core.CoapResource;
-import org.eclipse.californium.core.coap.CoAP;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 
 import java.io.UnsupportedEncodingException;
@@ -24,9 +23,10 @@ public class VolumeResource extends CoapResource {
         try {
             String data = new String(exchange.getRequestPayload(), CHARSET_NAME);
             exchange.accept();
-            exchange.respond(CoAP.ResponseCode.CONTENT, "ok");
             for(Persister persister : persisters)
                 persister.persiste(data);
+
+            exchange.respond("PERSISTED");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
