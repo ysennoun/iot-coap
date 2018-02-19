@@ -1,4 +1,4 @@
-package com.xebia.iot.coap.client;
+package com.xebia.iot.coap;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapResponse;
@@ -15,24 +15,23 @@ public class Client {
         this.client = new CoapClient(this.coapUrl);
     }
 
-    public String doPost(String payload) {
-        CoapResponse coapResponse = client.post(payload, MediaTypeRegistry.TEXT_PLAIN);
-        return coapResponse.getResponseText();
-    }
-
-    public String getGetResponseText() {
-        return this.coapResponse.getResponseText();
+    public void doPost(String payload) {
+        this.coapResponse = client.post(payload, MediaTypeRegistry.TEXT_PLAIN);
     }
 
     public void doGet() {
         this.coapResponse = this.client.get();
     }
 
-    public int getGetCode() {
+    public String getResponseText() {
+        return this.coapResponse.getResponseText();
+    }
+
+    public int getCode() {
         return this.coapResponse.getCode().value;
     }
 
-    public boolean isGetSuccessful() {
+    public boolean isSuccessful() {
         return this.coapResponse.isSuccess();
     }
 }

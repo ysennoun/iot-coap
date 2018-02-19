@@ -1,7 +1,6 @@
 package com.xebia.iot.coap.main;
 
-import com.xebia.iot.coap.client.Client;
-import org.eclipse.californium.core.CoapResponse;
+import com.xebia.iot.coap.Client;
 
 import java.util.Scanner;
 
@@ -23,8 +22,8 @@ public class ClientMain {
         switch(coapMethod) {
             case "GET" :
                 coapClient.doGet();
-                code = coapClient.getGetCode();
-                payload = coapClient.getGetResponseText();
+                code = coapClient.getCode();
+                payload = coapClient.getResponseText();
                 System.out.println("Resource '" + coapServerUrl + "'");
                 System.out.println("Method '" + coapMethod + "'");
                 System.out.println("CoAP server code response is : " + code);
@@ -34,7 +33,8 @@ public class ClientMain {
                 System.out.println("Enter payload to send: ");
                 Scanner scanner = new Scanner(System.in);
                 payload = scanner.nextLine();
-                String response = coapClient.doPost(payload);
+                coapClient.doPost(payload);
+                String response = coapClient.getResponseText();
                 System.out.println("Response from CoAP server : " + response);
                 break;
             default:

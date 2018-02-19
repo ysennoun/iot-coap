@@ -24,6 +24,7 @@ public class PositionResource extends CoapResource {
             exchange.accept();
             for(Persister persister : persisters)
                 persister.persiste(data);
+            exchange.respond("PERSISTED");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
