@@ -12,8 +12,8 @@ import java.net.UnknownHostException;
 
 public class EsPersister extends Persister {
 
-    private static EsPersisterInfo persisterInfo;
-    private static TransportClient client;
+    private EsPersisterInfo persisterInfo;
+    private TransportClient client;
 
     public EsPersister(EsPersisterInfo persisterInfo) {
         this.persisterInfo = persisterInfo;

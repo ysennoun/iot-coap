@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class PositionResource extends CoapResource {
 
-    private static ArrayList<Persister> persisters;
+    private ArrayList<Persister> persisters;
 
     public PositionResource(ArrayList<Persister> persisters) {
         super("position");

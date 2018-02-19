@@ -14,16 +14,16 @@ import java.util.ArrayList;
 
 public class InputArgumentsParser {
 
-    private static String filePath;
+    private String filePath;
 
     public InputArgumentsParser(String filePath) {
         this.filePath = filePath;
     }
 
-    public static String getContentConfigurationFilePath(String filePath) {
+    public String getContentConfigurationFilePath() {
         String content = null;
         try {
-            content = new String ( Files.readAllBytes( Paths.get(filePath) ) );
+            content = new String ( Files.readAllBytes( Paths.get(this.filePath) ) );
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -32,7 +32,7 @@ public class InputArgumentsParser {
     }
 
     public ArrayList<Persister> getPersisters() {
-        String content = getContentConfigurationFilePath(filePath);
+        String content = getContentConfigurationFilePath();
         PersistersTypeInfo persitersTypeInfo = PersistersTypeInfo.parseJsonContent(content);
         ArrayList<Persister> persisters = new ArrayList<Persister>();
         for(PersisterTypeInfo pti : persitersTypeInfo.getPersisters()) {

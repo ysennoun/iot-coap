@@ -6,9 +6,9 @@ import org.eclipse.californium.core.coap.MediaTypeRegistry;
 
 public class Client {
 
-    private static String coapUrl;
-    private static CoapClient client;
-    private static CoapResponse coapResponse;
+    private String coapUrl;
+    private CoapClient client;
+    private CoapResponse coapResponse;
 
     public Client(String coapUrl){
         this.coapUrl = coapUrl;

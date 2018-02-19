@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class VolumeResource extends CoapResource {
 
-    private static ArrayList<Persister> persisters;
+    private ArrayList<Persister> persisters;
 
     public VolumeResource(ArrayList<Persister> persisters) {
         super("volume");
