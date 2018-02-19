@@ -1,11 +1,12 @@
 package com.xebia.iot.coap.main;
 
-import com.xebia.iot.coap.persister.Persister;
-import com.xebia.iot.coap.persister.PersisterTypeInfo;
-import com.xebia.iot.coap.persister.PersistersTypeInfo;
-import com.xebia.iot.coap.persister.console.ConsolePersister;
-import com.xebia.iot.coap.persister.elasticsearch.EsPersister;
-import com.xebia.iot.coap.persister.elasticsearch.EsPersisterInfo;
+
+import com.xebia.iot.persister.Persister;
+import com.xebia.iot.persister.PersisterTypeInfo;
+import com.xebia.iot.persister.PersistersTypeInfo;
+import com.xebia.iot.persister.console.ConsolePersister;
+import com.xebia.iot.persister.elasticsearch.EsPersister;
+import com.xebia.iot.persister.elasticsearch.EsPersisterInfo;
 
 import java.io.IOException;
 import java.nio.file.Files;

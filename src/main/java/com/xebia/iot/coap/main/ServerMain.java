@@ -1,8 +1,8 @@
 package com.xebia.iot.coap.main;
 
-import com.xebia.iot.coap.persister.Persister;
 import com.xebia.iot.coap.server.Server;
 import com.xebia.iot.coap.server.resources.*;
+import com.xebia.iot.persister.Persister;
 import org.eclipse.californium.core.CoapResource;
 
 import java.net.SocketException;
