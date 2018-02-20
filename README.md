@@ -14,7 +14,7 @@ It will give you a jar name `iot-coap-1.0-SNAPSHOT-jar-with-dependencies.jar`.
 
 To create a client, execute the following command:
 
-java -cp iot-coap-1.0-SNAPSHOT-jar-with-dependencies.jar com.xebia.iot.coap.main.ClientMain <serverUri> <method>
+	java -cp iot-coap-1.0-SNAPSHOT-jar-with-dependencies.jar com.xebia.iot.coap.main.ClientMain <serverUri> <method>
 
 where `<serverUri>` is alike: `"coap://<coap-server-ip>:5683"`
 
