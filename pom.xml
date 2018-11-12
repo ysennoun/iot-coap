@@ -44,7 +44,7 @@
     <eclipse-californium.version>1.0.6</eclipse-californium.version>
     <elasticsearch.version>6.1.3</elasticsearch.version>
     <junit.version>3.8.1</junit.version>
-    <jackson.version>2.9.2</jackson.version>
+    <jackson.version>2.9.7</jackson.version>
   </properties>
 
   <repositories>
